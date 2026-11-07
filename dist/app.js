@@ -78,7 +78,7 @@ function validCount(value) { return Number.isInteger(value) && value >= 0 && val
 
 let family=readFamily(),academy=null;
 const familyHero=()=>family.profiles.find(p=>p.id===family.current);
-let state = familyHero().arena ? sanitiseState(familyHero().arena) : restoreState();
+let state = familyHero().arena ? sanitiseState(familyHero().arena) : family.profiles.length===1 ? restoreState() : defaultState();
 let game = new Chess();
 let selected = null;
 let hint = null;
