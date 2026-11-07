@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#173d40" />
+    <meta name="description" content="ChessQuest brings 100 friendly chess missions, ten adventure worlds and fifteen levels of offline computer chess to Hero Academy." />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>ChessQuest · Hero Academy</title>
+  <link rel="stylesheet" href="./academy-client.css"></head>
+  <body>
+    <a class="skip-link" href="#board-title">Skip to chess board</a>
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="brand" href="https://heroacademy.app/" aria-label="Hero Academy home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 46 46"><path d="m23 4 5.7 12.1L42 18l-9.6 9.4L35 41l-12-6.3L11 41l2.6-13.6L4 18l13.3-1.9z" fill="#ffc869" stroke="#123b3e" stroke-width="2.5" stroke-linejoin="round"/><path d="M15 23h16M23 16v15" stroke="#173d40" stroke-width="3" stroke-linecap="round"/></svg>
+          </span>
+          <span class="brand-words"><strong>HERO ACADEMY</strong><small>Little steps. Brilliant adventures.</small></span>
+        </a>
+        <div class="top-links"><span class="save-label"><span class="save-dot"></span><span id="save-indicator">Saved on this device</span></span><a class="back-link" href="./adventure.html">★ Royal Road</a><a class="back-link" href="https://heroacademy.app/">All adventures <span aria-hidden="true">↗</span></a></div>
+      </header>
+
+      <main>
+        <section class="hero" aria-labelledby="main-title">
+          <div class="hero-copy">
+            <div class="eyebrow"><span class="mini-spark">✦</span> WELCOME TO THE CHESS KINGDOM</div>
+            <h1 id="main-title">Big moves start<br />with <em>little steps.</em></h1>
+            <p>Meet the pieces, make your plan and take on the computer. Every game is a new adventure!</p>
+            <div class="hero-anchors"><span>♟ <b>15</b> computer strengths</span><span>♜ Choose white or black</span><span>♡ No rush, just fun</span></div>
+          </div>
+          <div class="hero-art" aria-hidden="true">
+            <div class="hero-art-circle"></div>
+            <div class="art-board"><span>♜</span><span>♞</span><span>♟</span><span>♕</span></div>
+            <div class="pip-figure">
+              <div class="pip-antenna"></div><div class="pip-head"><i></i><b></b><span></span></div><div class="pip-body"><span class="pip-heart">♥</span></div>
+            </div>
+            <div class="art-speech">You've got this! <span>✦</span></div>
+            <span class="art-star star-one">✦</span><span class="art-star star-two">✧</span><span class="art-star star-three">✦</span>
+          </div>
+        </section>
+
+        <section class="royal-road-promo" aria-label="Learn chess with 100 adventures"><div class="promo-icon" aria-hidden="true">★<span>♜</span></div><div><div class="section-kicker">NEW · THE ROYAL ROAD</div><h2>New to chess? Start your quest with Pip!</h2><p>100 bite-sized missions across 10 magical worlds. Star Hunts, King Rescues, Checkmate Quests, mini matches and more.</p></div><a href="./adventure.html" class="promo-link">Explore 100 missions <span aria-hidden="true">→</span></a></section>
+        <section class="levels-section" id="arena" aria-labelledby="levels-title">
+          <div class="section-title-line"><div><div class="section-kicker">THE CHESS ARENA · PLAY THE COMPUTER</div><h2 id="levels-title">Choose your opponent <span>✧</span></h2></div><span class="section-helper">15 strengths · choose your colour · all open</span></div>
+          <div id="levels" class="level-grid" role="group" aria-label="Computer difficulty"></div>
+        </section>
+
+        <section class="game-layout" aria-label="Chess game">
+          <div class="board-card">
+            <div class="board-heading"><div><div class="section-kicker">THE ROYAL BOARD</div><h2 id="board-title">The castle clearing <span aria-hidden="true">✦</span></h2></div><div id="turn-pill" class="turn-pill" aria-live="polite">Your move</div></div>
+            <div class="player-strip opponent-strip"><div class="avatar opponent-avatar">♛</div><div class="player-info"><strong>Castle Champion</strong><small id="opponent-label">Level 1 · Little Pawn</small></div><div id="opponent-captured" class="captured" aria-label="Pieces taken by the computer"></div></div>
+            <div class="board-frame">
+              <div id="board" class="chess-board" role="grid" aria-label="Chess board, tap a piece then tap its destination"></div>
+            </div>
+            <div class="player-strip human-strip"><div class="avatar hero-avatar">★</div><div class="player-info"><strong>You, the Hero!</strong><small id="your-colour-label">Playing white</small></div><div id="human-captured" class="captured" aria-label="Pieces you've taken"></div></div>
+            <div class="board-bottom"><p id="game-message" class="game-message" role="status" aria-live="polite">Choose a piece to see where it can go.</p><div id="thinking-dots" class="thinking-dots" hidden aria-label="Computer thinking"><i></i><i></i><i></i></div></div>
+            <div class="action-bar"><button id="undo-button" class="soft-button" type="button"><span aria-hidden="true">↶</span> Take back</button><button id="hint-button" class="soft-button" type="button"><span aria-hidden="true">✧</span> Hint</button><button id="flip-button" class="soft-button" type="button"><span aria-hidden="true">⇄</span> Flip board</button><button id="new-button" class="soft-button" type="button"><span aria-hidden="true">↻</span> New game</button></div>
+          </div>
+
+          <aside class="sidebar" aria-label="Game choices and learning">
+            <div class="side-card setup-card"><div class="side-title"><span class="side-title-icon">♔</span><div><small>MAKE IT YOURS</small><h3>Your game, your way</h3></div></div>
+              <div class="choice-label">Play as</div><div id="colours" class="colour-options" role="group" aria-label="Choose your chess colour"><button type="button" class="colour-option" data-colour="w" aria-pressed="true"><span class="piece-preview light-preview">♔</span><span>White</span><small>Move first</small></button><button type="button" class="colour-option" data-colour="b" aria-pressed="false"><span class="piece-preview dark-preview">♚</span><span>Black</span><small>Move second</small></button></div>
+              <button id="start-button" class="primary-button" type="button">✦ Play this adventure <span>→</span></button>
+              <div class="options-row"><label class="switch-label"><input type="checkbox" id="show-moves" checked /><span>Show legal moves</span></label><label class="switch-label"><input type="checkbox" id="speech" /><span>Read tips aloud</span></label><label class="switch-label"><input type="checkbox" id="large-text" /><span>Larger text</span></label></div>
+            </div>
+
+            <div class="side-card pip-card"><div class="pip-card-header"><div class="little-pip" aria-hidden="true"><span>● ●</span><i>♥</i></div><div><small>A LITTLE HELP FROM PIP</small><h3>Pip's chess tip <span>✦</span></h3></div></div><p id="pip-tip">Tap one of your pieces. The glowing dots will show you where it can go!</p><button id="listen-button" class="text-button" type="button"><span aria-hidden="true">◖))</span> Listen to Pip</button></div>
+
+            <div class="side-card journey-card"><div class="side-title"><span class="side-title-icon gold">★</span><div><small>YOUR ADVENTURE</small><h3>Little victories</h3></div></div><div class="stats-row"><div><strong id="win-count">0</strong><small>Wins</small></div><div><strong id="draw-count">0</strong><small>Draws</small></div><div><strong id="game-count">0</strong><small>Games</small></div></div><div class="progress-caption"><span>Stars collected</span><strong id="star-count">0 / 45 ★</strong></div><div id="star-progress" class="progress-track"><span></span></div><div class="backup-actions"><button id="export-button" type="button">↓ Save a backup</button><button id="import-button" type="button">↑ Restore</button><input type="file" id="import-file" accept=".json,application/json" hidden aria-label="Restore ChessQuest backup" /></div></div>
+
+            <details class="side-card moves-card"><summary><span class="side-title-icon beige">≡</span><span>Move history</span><span class="details-caret">⌄</span></summary><ol id="moves-list" class="moves-list"><li class="empty-moves">Your moves will appear here.</li></ol></details>
+          </aside>
+        </section>
+
+        <section class="learn-section" aria-labelledby="learn-title"><div class="section-title-line"><div><div class="section-kicker">A LITTLE CHESS SCHOOL</div><h2 id="learn-title">Learn with Pip <span>♡</span></h2></div><span class="section-helper">Open a card whenever you need a hand</span></div><div class="lesson-grid">
+          <details class="lesson-card"><summary><span class="lesson-icon">♙</span><span><strong>Meet the pieces</strong><small>Who's who on the board?</small></span><span class="lesson-arrow">+</span></summary><div class="lesson-content"><p><b>♙ Pawn:</b> forward one square (two on its first move), captures diagonally.</p><p><b>♖ Rook:</b> straight lines. <b>♗ Bishop:</b> diagonals.</p><p><b>♘ Knight:</b> jumps in an L shape. <b>♕ Queen:</b> straight or diagonal.</p><p><b>♔ King:</b> one square in any direction. Keep it safe!</p></div></details>
+          <details class="lesson-card"><summary><span class="lesson-icon">♘</span><span><strong>Make a clever move</strong><small>See, think, then play</small></span><span class="lesson-arrow">+</span></summary><div class="lesson-content"><p>Tap a piece, then tap a glowing destination. Try to control the middle four squares. Before moving, ask: “Can my opponent take this piece?”</p><p>Need help? The <b>Hint</b> button finds a move for you.</p></div></details>
+          <details class="lesson-card"><summary><span class="lesson-icon">♚</span><span><strong>Win the kingdom</strong><small>Check, checkmate and draws</small></span><span class="lesson-arrow">+</span></summary><div class="lesson-content"><p><b>Check</b> means the king is under attack. You must make it safe.</p><p><b>Checkmate</b> ends the game when the king cannot escape.</p><p>Sometimes neither side can win: that's a <b>draw</b>. Castling and en passant work here, too!</p></div></details>
+        </div></section>
+      </main>
+
+      <footer class="footer"><div><strong>HERO ACADEMY</strong><span>Made for curious minds and brave little moves.</span></div><div><span>Quiet play. Room to try. <span aria-hidden="true">♡</span></span><span>No account, adverts or online opponent needed.</span></div></footer>
+    </div>
+
+    <dialog id="promotion-dialog" class="modal"><div class="modal-inner"><div class="modal-decor">✦ NEW SUPERPOWER ✦</div><h2>Your pawn made it!</h2><p>Choose what your pawn becomes.</p><div id="promotion-choices" class="promotion-choices"></div></div></dialog>
+    <dialog id="confirm-dialog" class="modal"><div class="modal-inner"><div class="modal-decor">✦ A FRESH ADVENTURE ✦</div><h2>Start a new game?</h2><p>Your current game will be replaced. Your stars and achievements stay safe.</p><div class="modal-actions"><button id="cancel-new" class="soft-button" type="button">Keep playing</button><button id="confirm-new" class="primary-button" type="button">Start fresh →</button></div></div></dialog>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

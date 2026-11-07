@@ -1,0 +1,10 @@
+{
+  "name": "Hero Academy ChessQuest",
+  "short_name": "ChessQuest",
+  "description": "A child-friendly chess adventure with five computer strengths.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#fffaf0",
+  "theme_color": "#173d40",
+  "icons": [{"src":"./favicon.svg","sizes":"any","type":"image/svg+xml","purpose":"any"}]
+}

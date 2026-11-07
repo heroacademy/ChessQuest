@@ -1,0 +1,55 @@
+.academy-account {
+  font-family: system-ui, sans-serif;
+  background: #fffdf7;
+  color: #14353b;
+  border: 1px solid #b7c8b4;
+  border-radius: 20px;
+  padding: 18px;
+  margin: 20px auto;
+  max-width: 960px;
+  line-height: 1.5;
+}
+.academy-account div {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.academy-account a {
+  color: #126b62;
+}
+.academy-account button,
+.academy-conflict button {
+  font: inherit;
+  min-height: 48px;
+  border: 1px solid #9fb9ad;
+  border-radius: 12px;
+  padding: 10px 16px;
+  background: #f8f5ec;
+  color: #14353b;
+  cursor: pointer;
+}
+.academy-conflict {
+  font:
+    18px system-ui,
+    sans-serif;
+  max-width: min(520px, 94vw);
+  padding: 24px;
+  border: 1px solid #9fb9ad;
+  border-radius: 24px;
+  background: #fffdf7;
+  color: #14353b;
+}
+.academy-conflict button {
+  display: block;
+  width: 100%;
+  margin: 14px 0;
+}
+.academy-conflict::backdrop {
+  background: #14353baa;
+}
+.academy-account :focus-visible,
+.academy-conflict :focus-visible {
+  outline: 3px solid #ec7540;
+  outline-offset: 3px;
+}

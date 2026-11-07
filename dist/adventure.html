@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="theme-color" content="#173d40"/>
+  <meta name="description" content="Explore Hero Academy ChessQuest's 100 interactive chess-learning adventures. Learn the pieces, solve puzzles and play mini chess with Pip."/>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml"/>
+  <link rel="manifest" href="./manifest.webmanifest"/>
+  <link rel="stylesheet" href="./style.css"/>
+  <link rel="stylesheet" href="./adventure.css"/>
+  <title>The Royal Road · ChessQuest · Hero Academy</title>
+<link rel="stylesheet" href="./academy-client.css"></head>
+<body>
+<a href="#mission-content" class="skip-link">Skip to adventure</a>
+<div class="site-shell">
+  <header class="topbar">
+    <a class="brand" href="https://heroacademy.app/" aria-label="Hero Academy home">
+      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 46 46"><path d="m23 4 5.7 12.1L42 18l-9.6 9.4L35 41l-12-6.3L11 41l2.6-13.6L4 18l13.3-1.9z" fill="#ffc869" stroke="#123b3e" stroke-width="2.5" stroke-linejoin="round"/><path d="M15 23h16M23 16v15" stroke="#173d40" stroke-width="3" stroke-linecap="round"/></svg></span>
+      <span class="brand-words"><strong>HERO ACADEMY</strong><small>Little steps. Brilliant adventures.</small></span>
+    </a>
+    <nav class="road-nav" aria-label="ChessQuest navigation"><a href="./index.html#arena">♛ Chess Arena</a><a href="https://heroacademy.app/">All adventures ↗</a></nav>
+  </header>
+
+  <main id="mission-content">
+    <div id="overview-screen">
+      <section class="road-hero">
+        <div class="road-hero-copy"><div class="eyebrow">✦ CHESSQUEST · THE ROYAL ROAD</div><h1>Learn chess.<br/><em>One little move at a time.</em></h1><p>Join Pip for 100 playful missions, from your very first pawn to the Royal Championship. Explore any world at your own pace!</p>
+          <div class="road-hero-buttons"><button type="button" id="continue-button" class="primary-button">✦ Continue my adventure <span>→</span></button><button type="button" id="first-button" class="outline-button">Start at level 1</button></div>
+        </div>
+        <div class="road-hero-illustration" aria-hidden="true"><div class="road-sun"></div><div class="road-castle">♜</div><div class="road-flag">★</div><div class="road-pip"><div class="road-pip-eye">• &nbsp; •</div><div>♥</div></div><div class="road-speech">Let's explore! ✦</div><span class="road-star one">✧</span><span class="road-star two">✦</span></div>
+      </section>
+
+      <div class="road-toolbar"><div class="profile-picker"><label for="profile-select">Playing as</label><select id="profile-select" aria-label="Choose a player profile"></select><button id="add-profile" type="button" aria-label="Add a player profile">+</button></div><div class="road-progress"><strong id="total-progress">0 / 100 missions</strong><div class="road-progress-track"><span id="total-progress-fill"></span></div><span id="total-stars">0 ★</span></div></div>
+      <div class="road-tabs" role="tablist" aria-label="Adventure views"><button id="tab-worlds" type="button" role="tab" aria-selected="true">🗺 Adventure map</button><button id="tab-games" type="button" role="tab" aria-selected="false">🎲 Mini games</button><button id="tab-progress" type="button" role="tab" aria-selected="false">★ My progress</button></div>
+
+      <section id="worlds-view" class="road-view" aria-labelledby="worlds-heading"><div class="road-section-heading"><div><div class="section-kicker">TEN MAGICAL WORLDS</div><h2 id="worlds-heading">Choose a place to explore <span>✧</span></h2></div><p>Every level is open. Choose your own path.</p></div><div id="world-grid" class="world-grid"></div><section id="level-picker" class="level-picker" hidden><div class="level-picker-top"><div><div class="section-kicker" id="selected-world-kicker">WORLD 01</div><h3 id="selected-world-name">Training Meadow</h3><p id="selected-world-subtitle"></p></div><button id="close-level-picker" type="button" aria-label="Close world levels">✕</button></div><div id="mission-grid" class="mission-grid"></div></section></section>
+
+      <section id="games-view" class="road-view" hidden aria-labelledby="games-heading"><div class="road-section-heading"><div><div class="section-kicker">SO MANY WAYS TO PLAY</div><h2 id="games-heading">Choose a mini game <span>♟</span></h2></div><p>Quick activities that teach chess by doing.</p></div><div id="game-types" class="game-types"></div><div id="game-filter-results" class="mission-grid game-filter-results"></div></section>
+
+      <section id="progress-view" class="road-view" hidden aria-labelledby="progress-heading"><div class="road-section-heading"><div><div class="section-kicker">EVERY MOVE COUNTS</div><h2 id="progress-heading">Your little victories <span>★</span></h2></div></div><div class="progress-dashboard"><div class="progress-feature"><span class="huge-star">★</span><div><span class="section-kicker">YOUR COLLECTION</span><strong id="profile-stars">0 golden stars</strong><p>There are no streaks or penalties. Every completed mission matters.</p></div></div><div id="world-progress-list" class="world-progress-list"></div></div><div class="backup-strip"><div><strong>Keep your adventure safe</strong><p>Progress is saved on this device. Export a backup to move it to another device.</p></div><div><button type="button" id="export-progress" class="outline-button">↓ Download backup</button><button type="button" id="import-progress" class="outline-button">↑ Restore backup</button><input type="file" id="import-file" accept=".json,application/json" hidden/></div></div></section>
+    </div>
+
+    <section id="play-screen" hidden aria-labelledby="play-mission-title"><div class="play-breadcrumb"><button id="back-to-map" type="button">← Adventure map</button><span id="play-world-label">World 1 · Level 1</span></div><div class="play-layout"><div class="challenge-board-card"><div class="challenge-heading"><div><span class="section-kicker" id="play-mode">STAR HUNT</span><h1 id="play-mission-title">Hello, Chessboard!</h1></div><span class="mission-badge" id="play-badge">1 / 100</span></div><p id="play-intro">Collect the stars!</p><div class="quest-goal" id="quest-goal" aria-live="polite">✦ Collect 1 star</div><div id="quest-board" class="quest-board" role="grid" aria-label="Interactive chess learning board"></div><div class="quest-board-note" id="board-note">Tap a glowing destination square.</div><div class="quest-actions"><button id="quest-hint" type="button" class="soft-button">✧ Show a hint</button><button id="quest-restart" type="button" class="soft-button">↻ Try again</button><button id="quest-listen" type="button" class="soft-button">◖)) Listen</button><button id="quest-undo" type="button" class="soft-button">↶ Undo</button></div></div>
+      <aside class="quest-sidebar"><div class="quest-coach"><div class="quest-coach-header"><span class="mini-robot" aria-hidden="true">• •<small>♥</small></span><div><span class="section-kicker">PIP THE CHESS COACH</span><h2>You've got this! ✦</h2></div></div><p id="coach-text">Take your time. You can try again whenever you like.</p><label class="switch-label"><input id="quest-voice" type="checkbox"/><span>Read tips aloud</span></label></div><div id="quest-success" class="quest-success" hidden><div class="success-stars">★ ★ ★</div><h2>Brilliant work!</h2><p id="success-text">You completed the mission.</p><button id="next-mission" type="button" class="primary-button">Next adventure <span>→</span></button><button id="replay-mission" type="button" class="outline-button">Play again</button></div><div class="quest-help"><h3>How this game works</h3><p id="rules-text">Tap a glowing square to move your piece.</p><div id="quest-counter" class="quest-counter"><span>Moves</span><strong>0</strong></div></div><div class="quest-preview"><span>COMING UP NEXT</span><strong id="next-mission-name">Next mission</strong></div></aside></div>
+    </section>
+  </main>
+  <footer class="footer"><div><strong>HERO ACADEMY · CHESSQUEST</strong><span>Small steps. Brilliant chess adventures.</span></div><div><span>Quiet play. Room to try. ♡</span><span>No accounts, adverts or paid services.</span></div></footer>
+</div>
+
+<dialog id="profile-dialog" class="modal"><form id="profile-form" class="modal-inner"><div class="modal-decor">✦ NEW HERO ✦</div><h2>What's your hero's name?</h2><p>Each hero gets their own adventures and stars.</p><label class="profile-dialog-label" for="profile-name">Hero name</label><input id="profile-name" type="text" required maxlength="24" autocomplete="off" placeholder="e.g. Alex"/><div class="modal-actions"><button id="cancel-profile" type="button" class="soft-button">Cancel</button><button type="submit" class="primary-button">Let's go! →</button></div></form></dialog>
+<dialog id="quest-promotion-dialog" class="modal"><div class="modal-inner"><div class="modal-decor">✦ A PAWN SUPERPOWER ✦</div><h2>Choose your new piece!</h2><p>What will your pawn become?</p><div id="quest-promotion-choices" class="promotion-choices"></div></div></dialog>
+<script type="module" src="./adventure.js"></script>
+</body>
+</html>
